@@ -1,0 +1,1 @@
+This Javascript file is an example of an array containing 3 objects. 
