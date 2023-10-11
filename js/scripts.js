@@ -1,16 +1,51 @@
-let pokemonList = [
-    {name: "Pikachu", type: "Electric", height: .4},
-    {name: "Metapod", type: "Bug", height: .7},
-    {name: "Magikarp", type: "Water", height: .9},
-    {name: "Snorlax", type: "Normal", height: 2.1}
-];
-//This for loop runs through the array and displays the Pokemon, their height and a special note about them.
-for (let i = 0; i < pokemonList.length; i++){
-    document.write(pokemonList[i].name + " (height: " + pokemonList[i].height + " m) " )
-    // This if statement adds a note about the pokemon's size. 
-    if (pokemonList[i].height >= 1){
-        document.write("- Now that's a large Pokemon.")
+let pokemonRepository = (function () {
+    let pokemonList = [
+        { name: "Pikachu", type: "Electric", height: .4 },
+        { name: "Metapod", type: "Bug", height: .7 },
+        { name: "Magikarp", type: "Water", height: .9 },
+        { name: "Snorlax", type: "Normal", height: 2.1 }
+    ];
+
+    const pokemonKeys = Object.keys(pokemonList);
+    console.log(pokemonKeys);
+
+    function getAll() {
+        return pokemonList;
     }
-    document.write("<br>")
-}
+
+    function add(newItem) {
+        if (typeof newItem === "object" && typeof newItem !== null) {
+            if (typeof Object.keys(newItem) === typeof Object.keys(pokemonKeys)) {
+                pokemonList.push(newItem);
+            }
+        }
+        else {
+            console.log("Data type must be an object");
+        }
+    }
+
+    return {
+        getAll: getAll,
+        add: add
+    };
+})();
+
+
+pokemonRepository.getAll().forEach(function (pokemon) {
+    document.write("Name: " + pokemon.name + " ");
+    if (pokemon.height > 1) {
+        document.write("- Wow! That's a large Pokemon! ")
+    }
+    document.write("<br> Type: " + pokemon.type + "<br><br>");
+});
+
+let newPokemon = {
+    name: "Charmander", type: "fire", height: .6
+};
+
+pokemonRepository.add(newPokemon);
+
+pokemonRepository.getAll().forEach(function (item) {
+    document.write("Name: " + item.name + "<br>");
+});
 
