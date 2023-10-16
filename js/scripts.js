@@ -1,4 +1,6 @@
 let pokemonRepository = (function () {
+
+    //Pokemon repository array with objects for example pokemon
     let pokemonList = [
         { name: "Pikachu", type: "Electric", height: .4 },
         { name: "Metapod", type: "Bug", height: .7 },
@@ -6,13 +8,12 @@ let pokemonRepository = (function () {
         { name: "Snorlax", type: "Normal", height: 2.1 }
     ];
 
-    const pokemonKeys = Object.keys(pokemonList);
-    console.log(pokemonKeys);
-
+    //Function that simply returns the above array pokemonList
     function getAll() {
         return pokemonList;
     }
 
+    // This function provides validation for newly added items to the pokemonList array. 
     function add(newItem) {
         if (typeof newItem === "object" && typeof newItem !== null) {
             if (typeof Object.keys(newItem) === typeof Object.keys(pokemonKeys)) {
@@ -24,28 +25,29 @@ let pokemonRepository = (function () {
         }
     }
 
+    // This function creates li and button elements within the pokemon-list class on the index.html page. Additionally, this includes a local function that logs the pokemon's name when its corresponding button is clicked. 
+    function addListItem(pokemon){
+        let pokemonList = document.querySelector(".pokemon-list");
+        let pokemonItem = document.createElement("li");
+        let pokemonButton = document.createElement("button");
+        pokemonButton.innerText = pokemon.name;
+        pokemonButton.classList.add("button-class");
+        pokemonItem.appendChild(pokemonButton);
+        pokemonList.appendChild(pokemonItem);
+        pokemonButton.addEventListener("click", function showDetails(){
+            console.log(pokemon.name)
+        });   
+    }
+    
+    //pokemonRepository function return values
     return {
         getAll: getAll,
-        add: add
+        add: add,
+        addListItem: addListItem
     };
 })();
 
 
-pokemonRepository.getAll().forEach(function (pokemon) {
-    document.write("Name: " + pokemon.name + " ");
-    if (pokemon.height > 1) {
-        document.write("- Wow! That's a large Pokemon! ")
-    }
-    document.write("<br> Type: " + pokemon.type + "<br><br>");
+pokemonRepository.getAll().forEach(function(pokemon){
+pokemonRepository.addListItem(pokemon);
 });
-
-let newPokemon = {
-    name: "Charmander", type: "fire", height: .6
-};
-
-pokemonRepository.add(newPokemon);
-
-pokemonRepository.getAll().forEach(function (item) {
-    document.write("Name: " + item.name + "<br>");
-});
-

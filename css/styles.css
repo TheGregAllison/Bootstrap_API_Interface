@@ -1,14 +1,70 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background-color: rgb(231, 239, 255);
+    background-color: #fbd743;
     font-size: larger;
 }
+
 h1 {
-    text-align: center ;
+    text-align: center;
 }
 
+/* Pokemon List design */
 ul {
-    background-color: rgba(0, 0, 0, 0.15);
+    background-color: #5db9ff;
     border-radius: 5px;
     padding: 8px 15px;
+    list-style-type: none;
+    text-align: left;
+}
+
+/* Main Button Styles */
+.button-class {
+    border-radius: 15px;
+    width: 150px;
+    box-sizing: content-box;
+    border: 2px solid black;
+    color: black;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    display: inline-block;
+    margin: 4px 2px;
+    -webkit-transition-delay: none;
+    transition-delay: none;
+    transition-duration: .5s;
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.8);
+    
+}
+
+button:hover {
+    background-color: #ffffff;
+    transform: translate(5px);
+    transition: all .1s ease-in-out 0ms;
+}
+
+
+/* Mobile Design */
+@media only screen and (max-width: 500px) {
+    body {
+        font-size: 20px;
+    }
+    ul {
+        text-align: center;
+    }
+    button:hover {
+        background-color: #ffffff;
+        transform: none;  
+    }
+
+}
+
+/* Desktop/landscape Design */
+@media only screen and (min-width: 501px) {
+    button:hover {
+        background-color: #ffffff;
+        transform: translate(5px);
+        transition: all .1s ease-in-out 0ms;
+    }
 }
