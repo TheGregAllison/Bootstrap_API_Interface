@@ -5,7 +5,7 @@ let pokemonRepository = (function () {
     let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
     let modalContainer = document.querySelector(".modal-container");
 
- 
+
     // This function makes the modal visible on the webpage and adds the modal elements (Title/Pokemon name, Pokemon image, Pokemon height, and close button)
     function showModal(pokemon) {
         modalContainer.innerHTML = " ";
@@ -59,7 +59,7 @@ let pokemonRepository = (function () {
 
     // This function creates li and button elements within the pokemon-list class on the index.html page. Additionally, this includes a local function that logs the pokemon's name when its corresponding button is clicked. 
     function addListItem(pokemon) {
-    
+
         loadDetails(pokemon);
 
         let pokemonList = document.querySelector(".pokemon-list");
