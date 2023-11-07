@@ -4,23 +4,74 @@ body {
     font-size: larger;
 }
 
-h1 {
-    text-align: center;
+main {
+  padding-top: 95px;
 }
+
+#navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  z-index: 1;
+  overflow: none;
+}
+
+h1 {
+  display: inline;
+  text-align: center;
+}
+
+#to-top {
+  position: static;
+  display: inline;
+  box-sizing: border-box;
+  float: left;
+  padding-left: 10px;
+}
+
+#search-bar {
+  display: none;
+  box-sizing: border-box;
+  float: right;
+  padding-right: 10px;
+  width: 25%;
+  min-width: 300px;
+}
+
+.scrolled {
+  opacity: 85%;
+  transition: all 500ms ease-in-out;
+}
+
+.scrolled:hover {
+  opacity: 100%;
+  transition: all 100ms linear;
+}
+
+#search-button:hover {
+  translate: none;
+}
+
 
 /* Pokemon List design */
 ul {
     background-color: #5db9ff;
+    border: solid 2px white;
     border-radius: 5px;
     padding: 8px 15px;
     list-style-type: none;
-    text-align: left;
+    box-sizing: border-box;
+    width: 50%;
+    min-width: 400px;
 }
 
-/* Main Button Styles */
-.button-class {
+/* Original Main Button Styles (Bootstrap Overwrites these styles) */
+
+/* button{
     border-radius: 15px;
-    width: 150px;
+    min-width: 200px;
     box-sizing: content-box;
     border: 2px solid black;
     color: black;
@@ -29,19 +80,21 @@ ul {
     text-decoration: none;
     font-size: 16px;
     display: inline-block;
-    margin: 4px 2px;
     -webkit-transition-delay: none;
     transition-delay: none;
     transition-duration: .5s;
     cursor: pointer;
     background-color: rgba(255, 255, 255, 0.8);
-    
+} */
+
+.btn {
+  width: 50%
 }
 
 button:hover {
     background-color: #ffffff;
-    transform: translate(5px);
-    transition: all .1s ease-in-out 0ms;
+    transform:scaleX(103%);
+    transition: all 100ms ease-out 0ms;
 }
 
 .modal-container {
@@ -51,31 +104,33 @@ button:hover {
 
 .modal-container.is-visible {
   position: fixed;
-  padding: 20px;
-  box-sizing: border-box;
+  box-sizing: auto;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.5);
+  border-radius: 0;
   z-index: 999; 
-  overflow: auto; 
-  display: grid;
   text-align: center;
+  display: inline-block;
 }
 
 .modal {
-    margin: auto;
     display: inline-block;
     box-sizing: border-box;
     background: #fff;
     padding: 15px;
-    width: 100%;
-    max-width: 700px;
-    text-align: left;
+    width: 50%;
+    height: 25%;
     border-radius: 15px;
     border: solid black 2px;
+    margin-top: 15%;
+    min-width: 400px;
+    min-height: 210px;
+    max-width: 700px;
   }
+
 
   .modal-close {
     float: right;
@@ -97,6 +152,18 @@ button:hover {
     display: block;
     float: left;
     margin: 10px;
+    margin-right: 25px;
+    margin-bottom: 100px
+  }
+
+  p {
+    margin-bottom: -25px;
+    font-size: larger;
+  }
+
+  #bottom-to-top {
+    text-align: center;
+    padding-bottom: 10px;
   }
 
 
@@ -112,6 +179,20 @@ button:hover {
         background-color: #ffffff;
         transform: none;  
     }
+    #search-bar {
+      box-sizing: border-box;
+      text-align: center;
+      float: none;
+      padding-right: 0;
+      width: 75%;
+      min-width: none;
+    }
+
+    #to-top {
+      box-sizing: border-box;
+      float: center;
+      padding-left: none;
+    }
 
 }
 
@@ -119,7 +200,6 @@ button:hover {
 @media only screen and (min-width: 501px) {
     button:hover {
         background-color: #ffffff;
-        transform: translate(5px);
         transition: all .1s ease-in-out 0ms;
     }
 }
