@@ -1,4 +1,4 @@
-# Greg's Pokemon
+# Greg's Pokedex
 
 ## About
 This is a program to display a list of Pokemon. 

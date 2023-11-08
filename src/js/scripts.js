@@ -4,7 +4,7 @@ let pokemonRepository = (function () {
   let apiUrl = "https://pokeapi.co/api/v2/pokemon/?limit=150";
   let modalContainer = document.querySelector(".modal-container");
 
-  // This function makes the modal visible on the webpage and adds the modal elements (Title/Pokemon name, Pokemon image, Pokemon height, and close button)
+  // This function makes the modal visible on the webpage and adds the modal elements (Title/Pokemon name, Pokemon image, Pokemon height, Pokemon types, and close (X) button)
   function showModal(pokemon) {
     modalContainer.innerHTML = " ";
 
@@ -161,18 +161,6 @@ let pokemonRepository = (function () {
     }
   });
 
-  // non-essential code at this time
-
-  // function logDetails(pokemon) {
-  //     console.log(pokemon.name)
-  // }
-
-  // function logDetails(pokemon) {
-  //     loadDetails(pokemon).then(function () {
-  //         console.log(pokemon);
-  //     });
-  // }
-
   //pokemonRepository function return values
   return {
     add: add,
@@ -184,6 +172,7 @@ let pokemonRepository = (function () {
   };
 })();
 
+// Scrolling function for CSS 
 window.addEventListener("scroll", function () {
   let navBar = document.querySelector(".navbar");
   if (window.scrollY > 50) {
@@ -197,12 +186,4 @@ pokemonRepository.loadList().then(function () {
   pokemonRepository.getAll().forEach(function (pokemon) {
     pokemonRepository.addListItem(pokemon);
   });
-});
-
-let pokemonSearch = document.querySelector("#search-bar");
-
-pokemonSearch.addEventListener("keyup", (e) => {
-  let currentValue = e.target.value.toLowerCase();
-  let allPokemon = document.querySelectorAll("");
-  console.log(allPokemon);
 });
