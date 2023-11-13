@@ -172,7 +172,7 @@ let pokemonRepository = (function () {
   };
 })();
 
-// Scrolling function for CSS 
+// Scrolling function for CSS
 window.addEventListener("scroll", function () {
   let navBar = document.querySelector(".navbar");
   if (window.scrollY > 50) {
