@@ -3,11 +3,10 @@ body {
   background-color: #fbd743;
   font-size: larger;
 }
-
 main {
-  padding-top: 90px;
+  padding-top: 110px;
+  margin: 0 20px;
 }
-
 #navbar {
   position: fixed;
   top: 0;
@@ -16,13 +15,11 @@ main {
   box-sizing: border-box;
   z-index: 1;
 }
-
 h1 {
   position: relative;
   display: inline;
   text-align: left;
 }
-
 #to-top {
   position: absolute;
   display: inline;
@@ -30,7 +27,6 @@ h1 {
   text-align: right;
   padding-right: 40px;
 }
-
 #search-bar {
   position: static;
   display: none;
@@ -40,18 +36,14 @@ h1 {
   width: 25%;
   min-width: 300px;
 }
-
 .scrolled {
   opacity: 80%;
   transition: all 500ms ease-in-out;
 }
-
 .scrolled:hover {
   opacity: 100%;
   transition: all 100ms linear;
 }
-
-/* Pokemon List design */
 ul {
   background-color: #5db9ff;
   border: solid 2px white;
@@ -59,25 +51,21 @@ ul {
   padding: 8px 15px;
   list-style-type: none;
   box-sizing: border-box;
-  width: 50%;
   min-width: 400px;
+  margin: 20px 30px;
 }
-
 .btn {
   width: 50%;
 }
-
 button:hover {
   background-color: #ffffff;
   transform: scaleX(1.03);
   transition: all 100ms ease-out 0ms;
 }
-
 .modal-container {
   display: none;
   border-radius: 15px;
 }
-
 .modal-container.is-visible {
   position: fixed;
   box-sizing: border-box;
@@ -91,7 +79,6 @@ button:hover {
   text-align: center;
   display: inline-block;
 }
-
 .modal {
   display: inline-block;
   box-sizing: border-box;
@@ -106,19 +93,16 @@ button:hover {
   min-height: 210px;
   max-width: 700px;
 }
-
 .modal-close {
   float: right;
   border: 0;
   background: none;
   color: #777;
 }
-
 .modal-close:hover {
   text-decoration: none;
   cursor: pointer;
 }
-
 img {
   display: block;
   float: left;
@@ -133,55 +117,73 @@ p {
   margin-bottom: -25px;
   font-size: larger;
 }
-
 #bottom-to-top {
   text-align: center;
   padding-bottom: 10px;
 }
-
-/* Mobile Design */
 @media only screen and (max-width: 600px) {
   body {
     font-size: 20px;
   }
-
   #to-top {
     display: none;
   }
-
   h1 {
     display: block;
     text-align: center;
     padding-top: 10px;
   }
-
   ul {
-    text-align: center;
+    border-radius: 5px;
+    padding: 8px 15px;
+    list-style-type: none;
+    box-sizing: border-box;
+    min-width: 400px;
+    margin: 10px auto;
   }
-
   button:hover {
     background-color: #ffffff;
     transform: none;
-  } 
-
+  }
   #search-bar {
+    display: none;
     box-sizing: border-box;
     text-align: center;
     float: none;
     padding-right: 0;
     width: 75%;
   }
-
   #to-top {
     box-sizing: border-box;
     text-align: center;
   }
-}
 
-/* Desktop/landscape Design */
+  .pokemon-list {
+    justify-content: center;
+  }
+
+  .pokemon-list li {
+    flex: 0 1 100%; /* Adjust the percentage as needed */
+    margin: 0.5rem 0;
+  }
+}
 @media only screen and (min-width: 601px) {
   button:hover {
     background-color: #ffffff;
     transition: all 0.1s ease-in-out 0ms;
+  }
+
+  .pokemon-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0;
+    margin: 0 auto;
+  }
+
+  .pokemon-list li {
+    flex: 0 1 calc(30% - 1rem);
+    margin: 0.5rem;
+    min-width: 250px;
   }
 }
