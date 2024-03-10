@@ -5,6 +5,7 @@ body {
 }
 main {
   padding-top: 110px;
+  margin: 0 20px;
 }
 #navbar {
   position: fixed;
@@ -51,7 +52,7 @@ ul {
   list-style-type: none;
   box-sizing: border-box;
   min-width: 400px;
-  margin: 0 auto;
+  margin: 20px 30px;
 }
 .btn {
   width: 50%;
@@ -138,7 +139,7 @@ p {
     list-style-type: none;
     box-sizing: border-box;
     min-width: 400px;
-    margin: 0 auto;
+    margin: 10px auto;
   }
   button:hover {
     background-color: #ffffff;
