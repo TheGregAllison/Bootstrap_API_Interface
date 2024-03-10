@@ -1,4 +1,4 @@
-# Bootstrap API Application
+# Pokedex App
 
 ## UI Screenshot: <br /> <br /> <img width="500" alt="Screenshot 2024-03-08 at 4 41 18 PM" src="https://github.com/TheGregAllison/Bootstrap_API_Interface/assets/146021687/55b21afb-b74e-4cb9-a5c3-fda08a534014">
 
